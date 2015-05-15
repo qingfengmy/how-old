@@ -66,8 +66,6 @@ public class MainActivity extends ActionBarActivity {
     private static final String IMAGE_FILE_LOCATION = "file:///sdcard/temp.jpg";
     Uri imageUri = Uri.parse(IMAGE_FILE_LOCATION);
 
-    private Bitmap bitmap;
-
     public static final String LOCATION = Environment
             .getExternalStorageDirectory().getAbsolutePath()
             + "/how-old";
@@ -106,8 +104,6 @@ public class MainActivity extends ActionBarActivity {
                     prepareRsBitmap(rs);
                     photo.setImageBitmap(mPhotoImg);
                     ok.setEnabled(true);
-
-                    SpotManager.getInstance(MainActivity.this).showSpotAds(MainActivity.this);
                     break;
                 case MSG_ERROR:
                     loading.setVisibility(View.GONE);
@@ -245,6 +241,7 @@ public class MainActivity extends ActionBarActivity {
                 mHandler.sendMessage(message);
             }
         });
+        SpotManager.getInstance(MainActivity.this).showSpotAds(MainActivity.this);
     }
 
     @OnClick(R.id.create)
@@ -273,7 +270,7 @@ public class MainActivity extends ActionBarActivity {
     @OnClick(R.id.ok)
     public void download() {
         long currentTimeMillis = System.currentTimeMillis();
-        ImageTools.savePhotoToSDCard(this, bitmap, LOCATION,
+        ImageTools.savePhotoToSDCard(this, mPhotoImg, LOCATION,
                 currentTimeMillis + "");
         showPhoto.setVisibility(View.INVISIBLE);
     }

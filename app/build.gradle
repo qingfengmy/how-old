@@ -24,6 +24,4 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.1.1'
     compile 'com.jakewharton:butterknife:6.0.0'
     compile files('libs/faceppsdk.jar')
-    compile files('libs/umeng-analytics-v5.2.4.jar')
-    compile files('libs/YoumiSdk_v4.10_2014-09-11.jar')
 }

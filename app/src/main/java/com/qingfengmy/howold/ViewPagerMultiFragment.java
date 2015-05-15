@@ -98,7 +98,6 @@ public class ViewPagerMultiFragment extends ActionBarActivity {
 					prepareRsBitmap(rs);
 					photo.setImageBitmap(mPhotoImg);
 					ok.setEnabled(true);
-					SpotManager.getInstance(ViewPagerMultiFragment.this).showSpotAds(ViewPagerMultiFragment.this);
 					break;
 				case MSG_ERROR:
 					loading.setVisibility(View.GONE);
@@ -387,6 +386,7 @@ public class ViewPagerMultiFragment extends ActionBarActivity {
 				mHandler.sendMessage(message);
 			}
 		});
+		SpotManager.getInstance(ViewPagerMultiFragment.this).showSpotAds(ViewPagerMultiFragment.this);
 	}
 	@OnClick(R.id.ok)
 	public void download() {
