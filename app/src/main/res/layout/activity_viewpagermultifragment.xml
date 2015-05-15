@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg">
+
+    <Button
+        android:id="@+id/rightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/btn_topview_about_bg"
+        android:padding="8dp"
+        android:shadowColor="#4d4d4d"
+        android:shadowDx="0"
+        android:shadowDy="-3"
+        android:shadowRadius="5"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+    <RelativeLayout
+        android:id="@+id/pager_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/adLayout"
+        android:layout_below="@id/rightButton"
+        android:layout_marginBottom="40dp"
+        android:clipChildren="false"
+        android:layerType="software">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:clipChildren="false" />
+
+        <TextView
+            android:id="@+id/view_pager_index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:shadowColor="#4d4d4d"
+            android:shadowDx="0"
+            android:shadowDy="-3"
+            android:shadowRadius="5"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/adLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"></LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/showPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#cccccccc"
+        android:visibility="invisible">
+
+        <com.qingfengmy.howold.SquareImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#fff000"
+            android:padding="2dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp">
+
+            <Button
+                android:id="@+id/cancle"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="true"
+                android:background="@mipmap/btn_view_back_a" />
+
+            <Button
+                android:id="@+id/ok"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:background="@mipmap/btn_view_ok_a" />
+
+            <TextView
+                android:id="@+id/tv_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:textColor="#ffffff"
+                android:background="#fff000"
+                android:padding="5dp"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/tv_age"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/hint"
+            android:drawableLeft="@mipmap/male"
+            android:gravity="center"
+            android:text="32"
+            android:textColor="#ff00ff"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+    </FrameLayout>
+</RelativeLayout>
